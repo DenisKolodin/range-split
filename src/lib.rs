@@ -123,4 +123,26 @@ mod tests {
             Interval::new(13, 20),
         ]);
     }
+
+    #[test]
+    fn test_interval_close_first() {
+        let range = Interval::new(0, 20);
+
+        let intervals = range.split(&vec![0, 10]);
+        assert_eq!(intervals, vec![
+            Interval::new(0, 5),
+            Interval::new(6, 20),
+        ]);
+    }
+
+    #[test]
+    fn test_interval_close_last() {
+        let range = Interval::new(0, 20);
+
+        let intervals = range.split(&vec![10, 20]);
+        assert_eq!(intervals, vec![
+            Interval::new(0, 15),
+            Interval::new(16, 20),
+        ]);
+    }
 }
