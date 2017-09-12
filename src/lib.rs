@@ -1,8 +1,8 @@
 
 #[derive(PartialEq, Debug, Clone)]
 pub struct Interval {
-    lower: usize,
-    upper: usize,
+    pub lower: usize,
+    pub upper: usize,
 }
 
 impl Interval {
